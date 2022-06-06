@@ -51,6 +51,8 @@ function validate() {
         valid = false
     }
 
+    //Yes I know that this isn't good validation for an email address
+    //But for the purposes of this project, close enough
     if(! element.value.includes('@')) {
         element.style.backgroundColor = 'red'
         valid = false
