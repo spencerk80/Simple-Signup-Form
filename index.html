@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Eeveelution Fan Page</title>
+        <link href="css/styles.css" rel="stylesheet">
+    </head>
+    <body onload="styleBanner()">
+        <header>
+            <img class="mirror" src="img/eevee.png" alt="Eevee">
+            <h1>Home of the Eeveelution Fan Club!</h1>
+            <img src="img/eevee.png" alt="Eevee">
+        </header>
+        <main>
+            <form action="javascript:void(0);" id="form">
+                <label for="fname">First Name:</label><br>
+                <input type="text" id="fname" name="fname"><br>
+                <label for="lname">Last Name:</label><br>
+                <input type="text" id="lname" name="lname"><br>
+                <label for="email">Email Address:</label><br>
+                <input type="text" id="email" name="email"><br>
+                <label for="uname">Desired Username:</label><br>
+                <input type="text" id="uname" name="uname"><br>
+                <label for="pswd">Password:</label><br>
+                <input type="password" id="pswd" name="pswd"><br>
+                <label for="repswd">Re-Enter Password:</label><br>
+                <input type="password" id="repswd" name="repswd"><br>
+                <button id="submit" onclick="showSuccess()">Submit</button>
+            </form>
+            <div id="success-msg">
+                <p id="success-banner"><strong>Submitted!</strong></p>
+            </div>
+        </main>
+    </body>
+    <!--Load everything else on the page first and foremost-->
+    <script src="js/form-validation.js"></script>
+</html>

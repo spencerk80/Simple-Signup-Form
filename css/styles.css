@@ -1,0 +1,60 @@
+html, body{
+    height: 100%;
+}
+
+header {
+    background-color: #bcffff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.mirror {
+    transform: rotateY(180deg);
+}
+
+header h1 {
+    margin: 0px 80px;
+}
+
+main {
+    background-image: url("../img/background.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    padding-top: 80px;
+    min-height: 100%;
+}
+
+main form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #bcffff;
+    border: solid 1px;
+    padding: 20px 0px;
+    min-width: 300px;
+}
+
+#submit {
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    margin-top: 5px;
+    width: 50%;
+}
+
+/* Wouldn't work with js. Setting values programmatically
+#success-msg {
+    min-width: 290px;
+    text-align: center;
+    background-color: #22ff33;
+    border: double 5px;
+    visibility: hidden;
+}
+*/
