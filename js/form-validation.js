@@ -1,73 +1,40 @@
-//For some reason the banner doesn't keep its styling from the css file with this behavior.
-//I will try to set the css programmatically on load instead
-function styleBanner() {
-    const BANNER = document.getElementById("success-banner")
-
-    BANNER.style.minWidth = '290px'
-    BANNER.style.textAlign = 'center'
-    BANNER.style.backgroundColor = '#22ff33'
-    BANNER.style.border = 'double 5px'
-    BANNER.style.visibility = 'hidden'
-}
-
-function showSuccess() {
-    const BANNER = document.getElementById("success-banner")
-    
-    reset()
-
-    if(validate()) {
-        BANNER.style.visibility = 'visible'
-        setTimeout(hideSuccess, 1000)
-    }
-}
-
-function hideSuccess() {
-    const BANNER = document.getElementById("success-banner")
-
-    BANNER.style.visibility = 'hidden'
-}
-
 function validate() {
     let element = document.getElementById("fname")
     let valid   = true
     let pswd    = ''
 
-    if( ! element.value) {
+    //Reset any red fields
+    reset()
+
+    if( ! element.value.toLowerCase().match('[a-z]+')) {
         element.style.backgroundColor = 'red'
         valid = false
     }
 
     element = document.getElementById("lname")
 
-    if( ! element.value) {
+    if( ! element.value.toLowerCase().match('[a-z]+')) {
         element.style.backgroundColor = 'red'
         valid = false
     }
 
     element = document.getElementById("email")
 
-    if(element.value == '') {
-        element.style.backgroundColor = 'red'
-        valid = false
-    }
-
-    //Yes I know that this isn't good validation for an email address
-    //But for the purposes of this project, close enough
-    if(! element.value.includes('@')) {
+    if( ! element.value.toLowerCase().match('[a-z0-9]+@[a-z]+\.[a-z]+')) {
         element.style.backgroundColor = 'red'
         valid = false
     }
 
     element = document.getElementById("uname")
 
-    if( ! element.value) {
+    if( ! element.value.toLowerCase().match('[a-z]+') ) {
         element.style.backgroundColor = 'red'
         valid = false
     }
 
     element = document.getElementById("pswd")
 
-    if( ! element.value) {
+    if( ! element.value.toLowerCase().match('[a-z]+')) {
         element.style.backgroundColor = 'red'
         valid = false
     }
@@ -75,7 +42,7 @@ function validate() {
     pswd = element.value;
     element = document.getElementById("repswd")
 
-    if( ! element.value || element.value != pswd) {
+    if( ! element.value.toLowerCase().match('[a-z]+') || element.value != pswd) {
         element.style.backgroundColor = 'red'
         valid = false
     }
